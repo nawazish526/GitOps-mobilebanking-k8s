@@ -41,7 +41,7 @@ Step 4 — Install ArgoCD on Kubernetes
 kubectl create namespace argocd
 
 # Install ArgoCD
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl apply -n argocd -f
 
 # Wait for pods to be ready
 kubectl get pods -n argocd -w
