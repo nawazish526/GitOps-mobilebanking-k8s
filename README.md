@@ -50,13 +50,14 @@ Step 5 — Expose ArgoCD UI
 # Patch ArgoCD service to LoadBalancer
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 
-# Get the external URL
+# Get the external URL<img width="1904" height="911" alt="Screenshot 2026-05-26 174448" src="https://github.com/user-attachments/assets/6e9f2f3b-0627-4017-b537-a512cd31a2e9" />
+
 kubectl get svc argocd-server -n argocd
 
 Step 6 — Get ArgoCD Admin Password
 kubectl get secret argocd-initial-admin-secret -n argocd \
   -o jsonpath='{.data.password}' | base64 -d
-  ![Uploading Screenshot 2026-05-26 175137.png…]()
+  
 
 ⚠️ Security Tip: Delete this secret after first login!
 kubectl delete secret argocd-initial-admin-secret -n argocd
@@ -66,7 +67,9 @@ Step 7 — Connect GitHub Repo to ArgoCD
 Log in to ArgoCD UI
 Go to Settings → Repositories
 Add your GitHub repo URL
-Apply the ArgoCD Application manifest:![Uploading Screenshot 2026-05-26 175137.png…]()
+Apply the ArgoCD Application manifest:
+
+<img width="1919" height="908" alt="Screenshot 2026-05-26 175137" src="https://github.com/user-attachments/assets/f20b9325-08e6-4e1a-a01a-63757898be83" />
 
 kubectl apply -f argocd/application.yml
 Step 8 — Verify Deployment
@@ -77,3 +80,4 @@ kubectl get pods
 kubectl get svc mobilebankingservice
 Open the EXTERNAL-IP in your browser — your Mobile Banking app is live! 🎉
 ->
+
