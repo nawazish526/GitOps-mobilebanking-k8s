@@ -1,0 +1,1 @@
+A production-ready GitOps-based deployment of a Mobile Banking application using Docker, Kubernetes, ArgoCD, Helm, and AWS. Any change pushed to this GitHub repository is automatically deployed to the Kubernetes cluster no manual intervention required.
